@@ -9,7 +9,7 @@ Static site, one page. Files:
 ## Putting it on your domain (GitHub Pages, free, HTTPS included)
 
 1. **Repository.** On github.com (account `Akshay200787`) create a repository named `sicm-site`, public, empty. Upload these files to it (drag the folder onto the repository page, or let Claude push them once the repository exists).
-2. **Pages.** Repository → Settings → Pages → Build and deployment: Source "Deploy from a branch", branch `main`, folder `/ (root)`. Within a minute the site is live at `https://akshay200787.github.io/sicm-site/` (and at https://www.thesicm.in once the DNS records are in) (then at `https://www.thesicm.in` once DNS is set).
+2. **Pages.** Repository → Settings → Pages → Build and deployment: Source "Deploy from a branch", branch `main`, folder `/ (root)`. Within a minute the site is live at `https://akshay200787.github.io/sicm-site/` (and at `https://www.thesicm.in` once the DNS records are in).
 3. **Domain.** Buy the domain at any registrar (Cloudflare, Namecheap, GoDaddy, Hostinger; a `.in` costs about ₹600–1,200 a year, a `.com` about ₹1,000–1,500). In the registrar's DNS settings add:
 
    | Type  | Host | Value |
