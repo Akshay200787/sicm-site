@@ -323,7 +323,7 @@
   <section id="editions">
     <div class="sec-head">
       <h2>Editions</h2>
-      <p>One standard, licensed by who is citing. Every edition carries the full rules, the declaration chapter and the citation-style file for Zotero and Mendeley, so the footnotes come out in SICM form without retyping.</p>
+      <p>One standard, printed to order and priced by who is citing. The manual is sold as a printed book only: each copy is printed when it is ordered, and the rules are not distributed as a PDF. Every copy carries the full rules and the declaration chapter.</p>
     </div>
     <div class="cards">
       <article class="card">
@@ -331,23 +331,23 @@
         <h3>One reader</h3>
         <div class="price num" data-price="student"></div>
         <p class="for">For students and research scholars citing in coursework, moots, dissertations and journal submissions.</p>
-        <ul class="inc"><li>The manual, PDF, v2.0</li><li>CSL style file (footnote mode)</li><li>Updates within edition 2</li></ul>
-        <button class="btn primary" type="button" data-buy="student">Buy the student edition</button>
+        <ul class="inc"><li>One printed copy of the manual, v2.0</li><li>Printed to order and shipped within India</li><li>Free CSL style file for Zotero and Mendeley</li></ul>
+        <button class="btn primary" type="button" data-buy="student">Order a printed copy</button>
       </article>
       <article class="card featured">
         <p class="eyebrow">Scholar &amp; practitioner</p>
         <h3>One author</h3>
         <div class="price num" data-price="scholar"></div>
         <p class="for">For academics, advocates, editors and researchers who publish, file or opine under their own name.</p>
-        <ul class="inc"><li>The manual, PDF, v2.0</li><li>CSL style file (footnote mode)</li><li>Updates within edition 2</li><li>Declaration template, Chapter 13</li></ul>
-        <button class="btn primary" type="button" data-buy="scholar">Buy the scholar edition</button>
+        <ul class="inc"><li>One printed copy of the manual, v2.0</li><li>Printed to order and shipped within India</li><li>Free CSL style file for Zotero and Mendeley</li><li>Declaration template, Chapter 13, with the order</li></ul>
+        <button class="btn primary" type="button" data-buy="scholar">Order a printed copy</button>
       </article>
       <article class="card">
         <p class="eyebrow">Institution</p>
         <h3>Site licence</h3>
         <div class="price num" data-price="institution"></div>
         <p class="for">For law schools, universities, journals and libraries adopting SICM as a mandated or recommended style.</p>
-        <ul class="inc"><li>Campus-wide access for students and faculty</li><li>Print copies at the institutional rate</li><li>CSL file for the library's reference managers</li><li>An adoption workshop for editors and faculty</li></ul>
+        <ul class="inc"><li>Printed copies for the library and faculty at the institutional rate</li><li>A licence to adopt SICM as the institution's style</li><li>CSL file for the library's reference managers</li><li>An adoption workshop for editors and faculty</li></ul>
         <button class="btn" type="button" data-buy="institution">Request a licence</button>
       </article>
       <article class="card">
@@ -355,12 +355,12 @@
         <h3>Organisation licence</h3>
         <div class="price num" data-price="corporate"></div>
         <p class="for">For law firms, legal publishers, research houses and AI teams whose output must cite Indian sources verifiably.</p>
-        <ul class="inc"><li>Organisation-wide access</li><li>Use of SICM form in published and client work</li><li>CSL file and declaration template</li><li>A briefing on citation, verification and AI declaration</li></ul>
+        <ul class="inc"><li>Printed copies for your teams at the organisation rate</li><li>Use of SICM form in published and client work</li><li>CSL file and declaration template</li><li>A briefing on citation, verification and AI declaration</li></ul>
         <button class="btn" type="button" data-buy="corporate">Request a licence</button>
       </article>
     </div>
     <p class="fine" id="payNote" hidden></p>
-    <p class="fine">Prices in Indian rupees, inclusive of applicable taxes. Institutional and organisation licences are annual and quoted on the number of readers. Print-on-demand copies are available with every licence.</p>
+    <p class="fine">Prices in Indian rupees, inclusive of applicable taxes; shipping is added at checkout. Every copy is printed to order. The manual is not sold as a PDF. Institutional and organisation licences are annual and quoted on the number of readers, with printed copies at the institutional rate.</p>
   </section>
 
   <section id="institutions">
@@ -513,7 +513,7 @@
         $('#institutions').scrollIntoView(); $('#f_inst').focus({ preventScroll: true }); return;
       }
       const n = $('#payNote');
-      n.innerHTML = `Online payment for this edition is not yet connected. Write to <span class="addr">${CONFIG.email}</span> naming the edition; an invoice and the files follow by email.`;
+      n.innerHTML = `Online payment for this edition is not yet connected. Write to <span class="addr">${CONFIG.email}</span> naming the edition and your delivery address; an invoice follows by email and the copy is printed and shipped to you.`;
       n.hidden = false; n.scrollIntoView({ block: 'nearest' });
     });
   });
