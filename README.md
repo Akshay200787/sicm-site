@@ -1,33 +1,27 @@
 # Standard Indian Citation Manual — website
 
-Static site, one page. Files:
+Static site on GitHub Pages at https://www.thesicm.in (custom domain in `CNAME`; `.nojekyll` keeps Pages from processing it).
 
-- `index.html` — the whole site (styles and script inside). Edit the `CONFIG` block at the top of the `<script>` for prices, payment links, your domain and LinkedIn URL.
-- `og.png` — the preview image LinkedIn and WhatsApp show when the link is shared.
-- `robots.txt`, `sitemap.xml`, `.nojekyll` — housekeeping for search engines and GitHub Pages.
+## Files
 
-## Putting it on your domain (GitHub Pages, free, HTTPS included)
+| File | What it is |
+| --- | --- |
+| `index.html` | The home page: free chapter, editions, printed copies, institution and organisation licences, lectures, author. |
+| `pricing.html`, `terms.html`, `licence.html`, `privacy.html`, `refunds.html`, `shipping.html`, `contact.html`, `thanks.html` | The document pages. Pages serves each at its bare name: `/terms`, `/pricing`… |
+| `config.js` | **The one file to edit.** Prices, Razorpay payment-page links, delivery times, email, address. Every page reads it. |
+| `site.css`, `site.js` | Shared styles and behaviour (prices, payment buttons, addresses, footer). |
+| `og.png` | Preview image for LinkedIn and WhatsApp. |
+| `robots.txt`, `sitemap.xml` | Search-engine housekeeping. |
+| `tools/build-pages.py` | Regenerates the document pages from their source text (`tools/page.py` is the shared skeleton). Only needed when the policy text changes. |
 
-1. **Repository.** On github.com (account `Akshay200787`) create a repository named `sicm-site`, public, empty. Upload these files to it (drag the folder onto the repository page, or let Claude push them once the repository exists).
-2. **Pages.** Repository → Settings → Pages → Build and deployment: Source "Deploy from a branch", branch `main`, folder `/ (root)`. Within a minute the site is live at `https://akshay200787.github.io/sicm-site/` (and at `https://www.thesicm.in` once the DNS records are in).
-3. **Domain.** Buy the domain at any registrar (Cloudflare, Namecheap, GoDaddy, Hostinger; a `.in` costs about ₹600–1,200 a year, a `.com` about ₹1,000–1,500). In the registrar's DNS settings add:
+## Changing prices or connecting payments
 
-   | Type  | Host | Value |
-   |-------|------|-------|
-   | A     | @    | 185.199.108.153 |
-   | A     | @    | 185.199.109.153 |
-   | A     | @    | 185.199.110.153 |
-   | A     | @    | 185.199.111.153 |
-   | AAAA  | @    | 2606:50c0:8000::153 |
-   | AAAA  | @    | 2606:50c0:8001::153 |
-   | AAAA  | @    | 2606:50c0:8002::153 |
-   | AAAA  | @    | 2606:50c0:8003::153 |
-   | CNAME | www  | akshay200787.github.io |
+Edit `config.js` and upload it. A payment button with a link in `config.pay` becomes a live link; a blank one shows "Online payment opens shortly". Prices in `config.prices` drive the cards, the pricing page and the licence schedule.
 
-   (Records as published by GitHub, checked 28 October 2026.)
-4. **Connect.** Repository → Settings → Pages → Custom domain: enter the domain, save. GitHub adds a `CNAME` file and checks the DNS; when the check passes (minutes to a few hours), tick **Enforce HTTPS**.
-5. **Rebuild with the real address.** Run `node build-site.js https://yourdomain/` (or ask Claude) so the canonical link and the share image point at the domain, and set `siteUrl` in `CONFIG`. Upload the new `index.html`.
+## The payment pages (Razorpay)
 
-## Payments
+One Razorpay Payment Page per product, fixed amount, with the fields that personalise the copy (name on the copy; postal address for printed copies; institution and contact for licences). The terms link on each page is `https://www.thesicm.in/terms` (individuals) or `https://www.thesicm.in/licence` (licences), and the redirect after payment is `https://www.thesicm.in/thanks?for=digital|print|licence|library|session`.
 
-Create payment links in Razorpay (or Stripe, Instamojo) for the student and scholar editions, with the PDF and the `.csl` file delivered by email on payment, and paste the links into `CONFIG.pay`. Until then the buy buttons show your email address.
+## Issuing copies
+
+Every copy is made with the private **SICM Copy Desk** (not in this repository): it stamps the master PDF with the buyer's name, copy number and hidden marks, records the copy in the register, and traces leaked copies.
