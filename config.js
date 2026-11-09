@@ -2,7 +2,7 @@
 // After editing, upload this file to the repository; nothing else needs changing.
 window.SICM = {
   siteUrl: 'https://www.thesicm.in',
-  email: 'akshaysreevatsa.adv@gmail.com',   // where buyers write; change when the thesicm.in inbox is live
+  email: 'info@thesicm.in',                 // where buyers write (GoDaddy Professional Email mailbox)
   owner: 'Akshay Sreevatsa',
   tradingAs: 'Standard Indian Citation Manual',
   city: 'Bengaluru, Karnataka, India',
